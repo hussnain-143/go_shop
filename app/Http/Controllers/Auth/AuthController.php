@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Mime\Email;
 use Validator;
 use App\Traits\ApiResponse;
 
@@ -45,4 +48,40 @@ class AuthController extends Controller
 
         }
     }
+
+    public function createUserApi(Request $request)
+    {
+        $validateData = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users,email', 
+            'password' => 'required|min:5',
+            'role' => 'required|exists:roles,id'  
+        ]);
+    
+        if ($validateData->fails()) {
+            return $this->error($validateData->errors()->first(), 400, []);
+        }
+    
+        // Hashing the password before storing
+        $user = User::create([
+            'name' => $request->name ?? 'Guest',
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+    
+        // Assigning role
+        $role = Role::find($request->role); // Using role ID passed in request
+        if ($role) {
+            $user->roles()->attach($role);
+        }
+    
+        if ($user) {
+            return $this->success([
+                'token' => $user->createToken('API Token')->plainTextToken,
+                'user' => $user
+            ], 201);
+        }
+    
+        return $this->error('User could not be created', 500, []);
+    }
+    
 }

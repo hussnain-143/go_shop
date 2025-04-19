@@ -15,6 +15,7 @@
   
   ],
   "paths": {
+
     "/auth/login": {
       "post": {
         "tags": [
@@ -45,6 +46,59 @@
             "required": true,
             "type": "string"
           }  
+         
+        ],
+        "responses": {
+          "200": {
+            "description": "Data"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User Register",
+        "operationId": "register",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "Enter Name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Enter Email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "Role",
+            "in": "formData",
+            "description": "Role",
+            "required": true,
+            "type": "string"
+          } 
          
         ],
         "responses": {
