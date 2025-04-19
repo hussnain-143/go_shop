@@ -16,7 +16,7 @@
   ],
   "paths": {
 
-    "/auth/login": {
+    "/login": {
       "post": {
         "tags": [
           "User"
@@ -93,12 +93,114 @@
             "type": "string"
           },
           {
-            "name": "Role",
+            "name": "role",
             "in": "formData",
             "description": "Role",
             "required": true,
             "type": "string"
           } 
+         
+        ],
+        "responses": {
+          "200": {
+            "description": "Data"
+          }
+        }
+      }
+    },
+    "/update_user": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User Update",
+        "operationId": "update user",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Enter Bearer Token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "Enter Name",
+            "required": true,
+            "type": "string"
+          }
+         
+        ],
+        "responses": {
+          "200": {
+            "description": "Data"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User Logout",
+        "operationId": "logout ",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Enter Bearer Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "User Get",
+        "operationId": "users",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Enter Bearer Token",
+            "required": true,
+            "type": "string"
+          }
          
         ],
         "responses": {
