@@ -16,6 +16,7 @@ class Product extends Model
     public function productAttribute()  {
         return $this->hasMany(ProductAttr::class,'product_id','id')->with('images'); 
     }
+    
 
 
 }
