@@ -11,6 +11,10 @@
     {
       "name": "User",
       "description": "All User Operations"
+    },
+    {
+      "name": "Home",
+      "description": "All home page Operations"
     }
   
   ],
@@ -210,7 +214,51 @@
         }
       }
     }
-   
+    ,
+    "/homepage": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Home Api",
+        "operationId": "home",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data"
+          }
+        }
+      }
+    },
+    "/homepage_category": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "summary": "Home Api",
+        "operationId": "home category",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data"
+          }
+        }
+      }
+    }
     
    
   },

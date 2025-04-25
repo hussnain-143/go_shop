@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +16,10 @@ Route::post('/logout', function(Request $request){
 })->middleware('auth:sanctum');
 
 
+/**
+ * Home Page API
+ */
+
+Route::get('/homepage', [HomeController::class,'HomeSetupApi']);
+Route::get('/homepage_category', [HomeController::class,'HomeCategoryApi']);
 

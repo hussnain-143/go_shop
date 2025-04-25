@@ -10,4 +10,15 @@ class HomeBanner extends Model
 
     protected $guarded = [];
 
+
+    public function getImageAttribute($value)
+    {
+        
+        if (empty($value)) {
+            return null;
+        }
+        return asset($value);
+        
+    }
+
 }
