@@ -3,6 +3,7 @@ export function getUrl() {
     return {
         getHeaderCategoryData: "" + BaseUrl + "/homepage_category",
         getHomeData: "" + BaseUrl + "/homepage",
+        getCategoryData: "" + BaseUrl + "/category_data/",
 
     };
 }

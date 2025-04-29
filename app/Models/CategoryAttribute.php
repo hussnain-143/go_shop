@@ -14,7 +14,7 @@ class CategoryAttribute extends Model
     }
     public function attribute()
     {
-        return $this->hasOne(Attribute::class,  'id','attribute_id',);
+        return $this->hasOne(Attribute::class,  'id','attribute_id',)->with('values'); ;
     }
 
     public function values()

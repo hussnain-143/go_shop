@@ -1,31 +1,4 @@
 <template>
-    <!-- preloader  -->
-    <div id="preloader">
-        <div id="ctn-preloader" class="ctn-preloader">
-            <div class="animation-preloader">
-                <div class="spinner"></div>
-            </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- preloader end -->
-
-
     <!-- Scroll-top -->
     <button class="scroll-top scroll-to-target" data-target="html">
         <i class="fas fa-angle-up"></i>
@@ -42,9 +15,9 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav show">
                                 <div class="logo">
-                                    <a href="index.html" class="main-logo"><img src="front-end/img/logo/fw_logo.png"
+                                    <a href="index.html" class="main-logo"><img src="/front-end/img/logo/fw_logo.png"
                                             alt="Logo"></a>
-                                    <a href="index.html" class="sticky-logo"><img src="front-end/img/logo/logo.png"
+                                    <a href="index.html" class="sticky-logo"><img src="/front-end/img/logo/logo.png"
                                             alt="Logo"></a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
@@ -53,21 +26,24 @@
                                             :key="cat_item.id"><a href="#">{{ cat_item.name }}</a>
                                             <ul class="mega-menu">
                                                 <li class="mega-menu-wrap">
-                                                    <ul class="mega-menu-col"
-                                                        >
+                                                    <ul class="mega-menu-col">
                                                         <li class="mega-title"><a href="shop.html">SUB CATEGORIES</a>
                                                         </li>
                                                         <li v-for="sub_cat_item in cat_item.sub_category"
-                                                        :key="sub_cat_item.id" ><a href="shop-sidebar.html">{{ sub_cat_item.name }}</a></li>
+                                                            :key="sub_cat_item.id"> <router-link
+                                                                :to="'/category/' + cat_item.slug">
+                                                                {{ sub_cat_item.name }}
+                                                            </router-link></li>
                                                     </ul>
                                                     <ul class="mega-menu-col sub-cat-post">
                                                         <li>
-                                                            <a href="shop-sidebar.html">
+                                                            <router-link
+                                                                :to="'/category/' + cat_item.slug">
 
-                                                                <img :src="cat_item.image ? cat_item.image : 'front-end/img/product/sub_menu_img01.jpg'"
+                                                                <img :src="cat_item.image ? cat_item.image : '/front-end/img/product/sub_menu_img01.jpg'"
                                                                     alt="" width="296" height="344" />
                                                                 <span class="btn">{{ cat_item.name }}</span>
-                                                            </a>
+                                                            </router-link>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -92,7 +68,7 @@
                                             <ul class="minicart">
                                                 <li class="d-flex align-items-start">
                                                     <div class="cart-img">
-                                                        <a href="#"><img src="front-end/img/product/cart_p01.jpg"
+                                                        <a href="#"><img src="/front-end/img/product/cart_p01.jpg"
                                                                 alt=""></a>
                                                     </div>
                                                     <div class="cart-content">
@@ -108,7 +84,7 @@
                                                 </li>
                                                 <li class="d-flex align-items-start">
                                                     <div class="cart-img">
-                                                        <a href="#"><img src="front-end/img/product/cart_p02.jpg"
+                                                        <a href="#"><img src="/front-end/img/product/cart_p02.jpg"
                                                                 alt=""></a>
                                                     </div>
                                                     <div class="cart-content">
@@ -146,7 +122,7 @@
                         <div class="mobile-menu">
                             <div class="close-btn"><i class="flaticon-targeting-cross"></i></div>
                             <nav class="menu-box">
-                                <div class="nav-logo"><a href="index.html"><img src="front-end/img/logo/logo.png" alt=""
+                                <div class="nav-logo"><a href="index.html"><img src="/front-end/img/logo/logo.png" alt=""
                                             title=""></a>
                                 </div>
                                 <div class="menu-outer">
@@ -216,7 +192,7 @@
 
         <!-- off-canvas-start -->
         <div class="sidebar-toggle-btn d-flex align-items-center justify-content-center"><a href="#"
-                class="navSidebar-button"><img src="front-end/img/icon/sidebar_toggle_icon.png" alt=""></a></div>
+                class="navSidebar-button"><img src="/front-end/img/icon/sidebar_toggle_icon.png" alt=""></a></div>
         <div class="sidebar-off-canvas info-group">
             <div class="off-canvas-overlay"></div>
             <div class="off-canvas-widget scroll">
@@ -230,7 +206,7 @@
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
                                 <div class="logo mb-30">
-                                    <a href="index.html"><img src="front-end/img/logo/logo.png" alt=""></a>
+                                    <a href="index.html"><img src="/front-end/img/logo/logo.png" alt=""></a>
                                 </div>
                                 <div class="content-box">
                                     <p>WooCommerce and WordPress are both free, open source software reasons many ...
@@ -316,7 +292,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="footer-logo">
-                            <a href="index.html"><img src="front-end/img/logo/w_logo.png" alt=""></a>
+                            <a href="index.html"><img src="/front-end/img/logo/w_logo.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -359,7 +335,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="pay-method-img">
-                            <img src="front-end/img/images/payment_method_img.png" alt="">
+                            <img src="/front-end/img/images/payment_method_img.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -383,23 +359,23 @@ export default {
     },
 
     mounted() {
-        var src = ['front-end/js/vendor/jquery-3.5.0.min.js',
-            'front-end/js/popper.min.js',
-            'front-end/js/bootstrap.min.js',
-            'front-end/js/isotope.pkgd.min.js',
-            'front-end/js/imagesloaded.pkgd.min.js',
-            'front-end/js/jquery.magnific-popup.min.js',
-            'front-end/js/jquery.mCustomScrollbar.concat.min.js',
-            'front-end/js/bootstrap-datepicker.min.js',
-            'front-end/js/jquery.nice-select.min.js',
-            'front-end/js/jquery.countdown.min.js',
-            'front-end/js/swiper-bundle.min.js',
-            'front-end/js/jarallax.min.js',
-            'front-end/js/slick.min.js',
-            'front-end/js/wow.min.js',
-            'front-end/js/nav-tool.js',
-            'front-end/js/plugins.js',
-            'front-end/js/main.js'];
+        var src = ['/front-end/js/vendor/jquery-3.5.0.min.js',
+            '/front-end/js/popper.min.js',
+            '/front-end/js/bootstrap.min.js',
+            '/front-end/js/isotope.pkgd.min.js',
+            '/front-end/js/imagesloaded.pkgd.min.js',
+            '/front-end/js/jquery.magnific-popup.min.js',
+            '/front-end/js/jquery.mCustomScrollbar.concat.min.js',
+            '/front-end/js/bootstrap-datepicker.min.js',
+            '/front-end/js/jquery.nice-select.min.js',
+            '/front-end/js/jquery.countdown.min.js',
+            '/front-end/js/swiper-bundle.min.js',
+            '/front-end/js/jarallax.min.js',
+            '/front-end/js/slick.min.js',
+            '/front-end/js/wow.min.js',
+            '/front-end/js/nav-tool.js',
+            '/front-end/js/plugins.js',
+            '/front-end/js/main.js'];
         for (var i = 0; i < src.length; i++) {
             var script = document.createElement('script');
             script.src = src[i];

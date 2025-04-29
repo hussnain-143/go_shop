@@ -15,6 +15,10 @@
     {
       "name": "Home",
       "description": "All home page Operations"
+    },
+    {
+      "name": "Category",
+      "description": "All Category Operations"
     }
   
   ],
@@ -258,8 +262,38 @@
           }
         }
       }
+    },
+    "/category_data/{slug}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Category Page",
+        "operationId": "category",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "description": "slug",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data"
+          }
+        }
+      }
     }
-    
    
   },
   "securityDefinitions": {

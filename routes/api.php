@@ -23,3 +23,9 @@ Route::post('/logout', function(Request $request){
 Route::get('/homepage', [HomeController::class,'HomeSetupApi']);
 Route::get('/homepage_category', [HomeController::class,'HomeCategoryApi']);
 
+/**
+ * Category Page API
+ */
+Route::get('/category_data/{slug?}', [HomeController::class,'CategoryApi']);
+
+

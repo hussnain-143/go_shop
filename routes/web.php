@@ -24,3 +24,8 @@ Route::get('/api_docs',function(){
 
 // ✅ Include Admin Routes
 require __DIR__.'/admin.php'; 
+
+// Catch-all must come last
+Route::get('/{any}', function () {
+    return view('index');
+})->where('any', '.*');
