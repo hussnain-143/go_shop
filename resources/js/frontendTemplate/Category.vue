@@ -347,7 +347,6 @@ export default {
     background-color:#ff9f6f ;
     border: 3px solid #ff5400;
     color: white;
-
 }
 
 .brandColor::before{
