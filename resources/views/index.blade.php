@@ -33,6 +33,6 @@
     </div>
     @vite('resources/js/app.js')
 
-    		<!-- JS here -->
+    <!-- JS here -->
 </body>
 </html>

@@ -678,11 +678,14 @@ $('.popup-video').magnificPopup({
 /*=============================================
 	=    	 Slider Range Active  	         =
 =============================================*/
+let lowPrice = parseInt($("#low-price").val());
+let highPrice = parseInt($("#high-price").val());
+
 $("#slider-range").slider({
 	range: true,
-	min: 40,
-	max: 700,
-	values: [120, 570],
+	min: lowPrice,
+	max: highPrice,
+	values: [lowPrice+200, highPrice-300],
 	slide: function (event, ui) {
 		$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
 	}

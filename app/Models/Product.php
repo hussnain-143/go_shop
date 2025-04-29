@@ -17,6 +17,13 @@ class Product extends Model
         return $this->hasMany(ProductAttr::class,'product_id','id')->with('images'); 
     }
     
+    public function getImageAttribute($value)
+    {
+        if (empty($value)) {
+            return null;
+        }
+        return asset($value);
+    }
 
 
 }

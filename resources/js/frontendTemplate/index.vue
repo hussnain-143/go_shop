@@ -9,7 +9,7 @@
 <!-- slider-area -->
 <section class="slider-area position-relative">
     <div class="third-slider-active">
-        <div class="third-slider-item third-slider-bg" data-background="front-end/img/slider/third_slider_bg.jpg" v-for="(banner, index) in homeBanner" :key="banner.id" >
+        <div class="third-slider-item third-slider-bg" data-background="/front-end/img/slider/third_slider_bg.jpg" v-for="(banner, index) in homeBanner" :key="banner.id" >
             <div class="container custom-container-two">
                 <div class="third-slider-wrap">
                     <div class="row align-items-center" >
@@ -27,9 +27,9 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="third-slider-img">
-                                <div class="img-shape" data-background="front-end/img/slider/third_slide_shape.png"
+                                <div class="img-shape" data-background="/front-end/img/slider/third_slide_shape.png"
                                     data-animation-in="zoomIn" data-delay-in="1" data-duration-in="1.5"></div>
-                                <img :src=" banner.image ?  banner.image  :  'front-end/img/slider/third_slider_img01.png'" alt="" class="main-img"
+                                <img :src=" banner.image ?  banner.image  :  '/front-end/img/slider/third_slider_img01.png'" alt="" class="main-img"
                                     data-animation-in="slideInRight2" data-delay-in="1" data-duration-in="1.5" width="537" height="560"  >
                             </div>
                         </div>
@@ -48,7 +48,7 @@
             <div class="col-lg-4 col-md-6 col-sm-9" v-for="(category) in setShortArray( 3 )" :key="category.id">
                 <div class="shoes-cat-item mb-50">
                     <div class="thumb mb-30">
-                        <a href="shop-sidebar.html"><img :src=" category.image ? category.image : 'front-end/img/images/shoes_cat_img01.jpg'" width="503" height="300" alt=""></a>
+                        <a href="shop-sidebar.html"><img :src=" category.image ? category.image : '/front-end/img/images/shoes_cat_img01.jpg'" width="503" height="300" alt=""></a>
                     </div>
                     <div class="content">
                         <ul>
@@ -94,7 +94,7 @@
                     <div  v-for="(catItem, index) in setShortArray( 6 )" :key="catItem.id" :class="'tab-pane'  +showactiveclass(2,index)"  :id="'cat_'+catItem.id" role="tabpanel"
                         :aria-labelledby="'cat_tab'+catItem.id">
                         <div class="trending-products-banner banner-animation">
-                            <a href="shop-sidebar.html"><img :src="catItem.image || 'front-end/img/images/trending_banner03.jpg'" alt=""></a>
+                            <a href="shop-sidebar.html"><img :src="catItem.image || '/front-end/img/images/trending_banner03.jpg'" alt=""></a>
                         </div>
                         <div class="row trending-product-active"  v-if="catItem.products.length > 0">
                             <div class="col" v-for="product in catItem.products">
@@ -102,7 +102,7 @@
                                     <div class="features-product-thumb">
                                         <!-- <div class="discount-tag">-20%</div> -->
                                         <a href="shop-details.html">
-                                            <img :src=" product.image ||'front-end/img/product/shoes_product01.jpg'" alt="" style="width: 266px; height: 235px;">
+                                            <img :src=" product.image ||'/front-end/img/product/shoes_product01.jpg'" alt="" style="width: 266px; height: 235px;">
                                         </a>
                                         <div class="product-overlay-action">
                                             <ul>
@@ -168,7 +168,7 @@
                 <div class="new-arrival-item text-center mb-50">
                     <div class="thumb mb-25">
 
-                        <a href="shop-details.html"><img :src="item.image ||'front-end/img/product/shoes_arrival_product01.jpg'"
+                        <a href="shop-details.html"><img :src="item.image ||'/front-end/img/product/shoes_arrival_product01.jpg'"
                             style="width: 296px; height: 334px;"  alt=""></a>
                         <div class="product-overlay-action">
                             <ul>
@@ -192,7 +192,7 @@
 <section class="shoes-banner-area">
     <div class="container">
         <div class="shoes-banner-active">
-            <div class="shoes-banner-bg" data-background="front-end/img/bg/shoes-banner_bg.jpg">
+            <div class="shoes-banner-bg" data-background="/front-end/img/bg/shoes-banner_bg.jpg">
                 <div class="row">
                     <div class="col-12">
                         <div class="shoes-banner-content">
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <div class="shoes-banner-bg" data-background="front-end/img/bg/shoes-banner_bg.jpg">
+            <div class="shoes-banner-bg" data-background="/front-end/img/bg/shoes-banner_bg.jpg">
                 <div class="row">
                     <div class="col-12">
                         <div class="shoes-banner-content">
@@ -212,7 +212,7 @@
                     </div>
                 </div>
             </div>
-            <div class="shoes-banner-bg" data-background="front-end/img/bg/shoes-banner_bg.jpg">
+            <div class="shoes-banner-bg" data-background="/front-end/img/bg/shoes-banner_bg.jpg">
                 <div class="row">
                     <div class="col-12">
                         <div class="shoes-banner-content">
@@ -233,7 +233,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-6 col-sm-8">
                 <div class="promo-services-item mb-40">
-                    <div class="icon"><img src="front-end/img/icon/promo_icon01.png" alt=""></div>
+                    <div class="icon"><img src="/front-end/img/icon/promo_icon01.png" alt=""></div>
                     <div class="content">
                         <h6>payment & delivery</h6>
                         <p>Delivered, when you receive arrives</p>
@@ -242,7 +242,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-8">
                 <div class="promo-services-item mb-40">
-                    <div class="icon"><img src="front-end/img/icon/promo_icon02.png" alt=""></div>
+                    <div class="icon"><img src="/front-end/img/icon/promo_icon02.png" alt=""></div>
                     <div class="content">
                         <h6>Return Product</h6>
                         <p>Retail, a Product Return Process</p>
@@ -251,7 +251,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-8">
                 <div class="promo-services-item mb-40">
-                    <div class="icon"><img src="front-end/img/icon/promo_icon03.png" alt=""></div>
+                    <div class="icon"><img src="/front-end/img/icon/promo_icon03.png" alt=""></div>
                     <div class="content">
                         <h6>money back guarantee</h6>
                         <p>Options Including 24/7</p>
@@ -260,7 +260,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-8">
                 <div class="promo-services-item mb-40">
-                    <div class="icon"><img src="front-end/img/icon/promo_icon04.png" alt=""></div>
+                    <div class="icon"><img src="/front-end/img/icon/promo_icon04.png" alt=""></div>
                     <div class="content">
                         <h6>Quality support</h6>
                         <p>Support Options Including 24/7</p>
@@ -280,7 +280,7 @@
                 <div class="insta-post-item">
                     <a href="#">
                         <i class="fab fa-instagram"></i>
-                        <img :src=" brand.image ? brand.image : 'front-end/img/instagram/s_insta_post01.jpg'" width="385" height="350" alt="">
+                        <img :src=" brand.image ? brand.image : '/front-end/img/instagram/s_insta_post01.jpg'" width="385" height="350" alt="">
                     </a>
                 </div>
             </div>
@@ -325,10 +325,6 @@ export default {
             this.homeCategory = response.data.data.category;
             this.homeBrand = response.data.data.brands;
             this.homeProduct = response.data.data.product;
-            console.log(this.homeBanner);
-            console.log(this.homeCategory); 
-            console.log(this.homeBrand);
-            console.log(this.homeProduct);
         },
         setShortArray(size){
             return this.homeCategory.slice(0, size);
