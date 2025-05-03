@@ -26,6 +26,6 @@ Route::get('/homepage_category', [HomeController::class,'HomeCategoryApi']);
 /**
  * Category Page API
  */
-Route::get('/category_data/{slug?}', [HomeController::class,'CategoryApi']);
+Route::post('/category_data', [HomeController::class,'CategoryApi']);
 
 
