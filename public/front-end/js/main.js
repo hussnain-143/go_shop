@@ -678,20 +678,23 @@ $('.popup-video').magnificPopup({
 /*=============================================
 	=    	 Slider Range Active  	         =
 =============================================*/
-let lowPrice = parseInt($("#low-price").val());
-let highPrice = parseInt($("#high-price").val());
+let lowPrice = parseInt($("#low_price").val());
+let highPrice = parseInt($("#high_price").val());
 
 $("#slider-range").slider({
 	range: true,
 	min: lowPrice,
 	max: highPrice,
-	values: [lowPrice+200, highPrice-300],
+	values: [lowPrice+400, highPrice-400],
 	slide: function (event, ui) {
-		$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+		$("#low_price").val(ui.values[0]);
+		$("#high_price").val(ui.values[1]);
+
 	}
 });
-$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-
+$("#low_price").val(lowPrice+400);
+$("#high_price").val( highPrice-400);
+   
 
 /*=============================================
 	=    		 Cart Active  	         =
