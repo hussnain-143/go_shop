@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xl-4 col-sm-6 " v-for="product in Product" :key="product.id">
+                                    <div class="col-xl-4 col-sm-6 " v-for="product in Product" :key="product.id"   v-if="Product.length">
                                         <div class="new-arrival-item text-center mb-50">
                                             <div class="thumb mb-25">
                                                 <a href="shop-details.html"><img
@@ -73,6 +73,10 @@
                                                 <span class="price">PKR {{ product.product_attribute[0].price }}</span>
                                             </div>
                                         </div>
+                                    </div>
+                                    <!-- If no products found -->
+                                    <div v-else class="col-12 text-center">
+                                        <h4>No products found.</h4>
                                     </div>
                                 </div>
                                 <div class="pagination-wrap">
@@ -307,6 +311,10 @@ export default {
         async getCategoryData() {
             
             try {
+
+                console.log( this.$refs.low_price.value)
+                console.log( this.$refs.high_price.value)
+
                 const response = await axios.post(getUrl().getCategoryData, {
                 "slug" : this.slug,
                 "attribute":this.attribute,

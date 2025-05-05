@@ -46,6 +46,7 @@ class HomeController extends Controller
         $highprice = $request->highprice;
         $lowprice = $request->lowprice;
 
+
         $category = Category::where('slug', $slug)->first();
 
         if ($category) {
